@@ -1,3 +1,4 @@
+import Header from "./Componnent/Header/Header"
 
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
 
   return (
     <>
-    <div className="bg-red-400"> hellow</div>
+   <Header></Header>
 
     </>
   )
