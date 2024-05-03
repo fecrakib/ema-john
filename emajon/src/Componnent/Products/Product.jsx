@@ -1,6 +1,6 @@
 
 
-function Product({product}) {
+function Product({product,handleCart }) {
     const {name,seller,price,rating,img}=product
   return (
     <div>
@@ -27,7 +27,7 @@ function Product({product}) {
     
 
       {/* Add to Cart Button */}
-      <button className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-md w-full">
+      <button onClick= {()=> handleCart(product) } className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-md w-full">
         Add to Cart
       </button>
     </div>

@@ -11,14 +11,21 @@ function Shop() {
         .then(data=>setProducts(data))
 
     },[])
-   
+   const [cart,setCart] = useState([]);
+   const handleCart = (product) => {
+       const newCart = [...cart,product];
+       setCart(newCart);
+   };
   return (
     <div className="container grid grid-cols-5 ">
         {/* product-container */}
         <div className=" col-span-4 grid md:grid-cols-3 lg:grid-cols-4 sm:grid-cols-1 mx-3"> 
        {
         products.map((product)=>(
-        <Product key={product.id }product={product}></Product>
+        <Product key={product.id }
+        product={product}
+        handleCart ={handleCart }
+        ></Product>
 
         ))
        }
@@ -27,6 +34,7 @@ function Shop() {
         {/* cart container */}
         <div className="col-span-1">
            <h1>Order summary </h1> 
+           <p>Selected product:{cart.length}</p>
         </div>
 
 
