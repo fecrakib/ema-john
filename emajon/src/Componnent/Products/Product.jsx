@@ -4,24 +4,24 @@ function Product({product}) {
     const {name,seller,price,rating,img}=product
   return (
     <div>
-           <div className=" "> 
-        <div className="bg-white shadow-md rounded-lg p-4 w-full max-w-md mx-auto">
+           <div className="m-3 "> 
+        <div className="bg-white shadow-md  rounded-lg p-4 w-full max-w-md mx-auto">
       {/* Product Image */}
-      <img
+      <img className="w-full h-[250px] mb-4"
         src={img}
-        className="rounded-md mb-4"
+      
       />
 
       {/* Product Title */}
       <h2 className="text-lg font-semibold text-gray-800 mb-2">
-        Product Title
+      {name}
       </h2>
 
       {/* Price */}
-      <p className="text-gray-600 mb-2">$99.99</p>
+      <p className="text-gray-600 mb-2">price:${price}</p>
 
       {/* Manufacturing */}
-      <p className="text-sm text-gray-500 mb-2">Manufactured by ABC Corp.</p>
+      <p className="text-sm text-gray-500 mb-2">{seller}</p>
 
       {/* Rating */}
     

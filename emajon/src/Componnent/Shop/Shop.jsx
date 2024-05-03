@@ -13,9 +13,9 @@ function Shop() {
     },[])
    
   return (
-    <div className="container grid grid-cols-5">
+    <div className="container grid grid-cols-5 ">
         {/* product-container */}
-        <div className=" col-span-4"> 
+        <div className=" col-span-4 grid md:grid-cols-3 lg:grid-cols-4 sm:grid-cols-1 mx-3"> 
        {
         products.map((product)=>(
         <Product key={product.id }product={product}></Product>
@@ -31,7 +31,7 @@ function Shop() {
 
 
     </div>
-  )
+  ) 
 }
 
 export default Shop
