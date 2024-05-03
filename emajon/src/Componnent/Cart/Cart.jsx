@@ -6,18 +6,18 @@ function Cart({cart}) {
     let shipping=0;
     for (const product of cart) {
         totalPrice +=parseFloat(product.price);
-        shipping=shipping+parseFloat(product.shipping)
+        shipping +=parseFloat(product.shipping)
     }
     // console.log(totalPrice)
-   let taxt=(totalPrice*7)/100;
-   let grandTotal=totalPrice+shipping+taxt;
+   let tax=parseFloat(((totalPrice*7)/100).toFixed(2));
+   let grandTotal=totalPrice + shipping + tax;
   return (
     <div className="bg-orange-400 p-4">   
   <h1>Order summary </h1> 
   <p>Selected product:{cart.length}</p>
   <p>Total Price:${totalPrice}</p>
   <p> Shipping:${shipping}</p>
-  <p>Tax:${taxt}</p>
+  <p>Tax:${tax}</p>
   <h4>Grand Total:{grandTotal}</h4>
     </div>
   )

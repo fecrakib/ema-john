@@ -2,6 +2,7 @@ import { data } from "autoprefixer";
 import { useEffect, useState } from "react";
 import Product from "../Products/Product";
 import Cart from "../Cart/Cart";
+import { addToDb, getShoppingCart } from "../Fakebd/Fadkebd";
 
 
 function Shop() {
@@ -12,10 +13,15 @@ function Shop() {
         .then(data=>setProducts(data))
 
     },[])
+    useEffect(()=>{
+        const storedCart = getShoppingCart();
+        console.log(storedCart);
+    },[])
    const [cart,setCart] = useState([]);
    const handleCart = (product) => {
        const newCart = [...cart,product];
        setCart(newCart);
+       addToDb(product.id);
    };
   return (
     <div className="container grid grid-cols-5 ">
