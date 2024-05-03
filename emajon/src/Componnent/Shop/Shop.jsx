@@ -1,6 +1,7 @@
 import { data } from "autoprefixer";
 import { useEffect, useState } from "react";
 import Product from "../Products/Product";
+import Cart from "../Cart/Cart";
 
 
 function Shop() {
@@ -33,8 +34,9 @@ function Shop() {
         </div>
         {/* cart container */}
         <div className="col-span-1">
-           <h1>Order summary </h1> 
-           <p>Selected product:{cart.length}</p>
+       <Cart key={cart.id} cart={cart}></Cart>
+         
+          
         </div>
 
 
