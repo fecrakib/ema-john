@@ -13,33 +13,24 @@ function Shop() {
         .then(data=>setProducts(data))
 
     },[])
-    // useEffect(()=>{
-    //     const storedCart = getShoppingCart();
-    //     // step 1:get id
-    //     for(const id in storedCart){
-    //        const addedProduct= products.find(product=>product.id===id);
-           
-    //        const quantity= storedCart[id];
-    //     //    addedProduct.quantity=quantity;
-    //     //    console.log(quantity);
-    //     addedProduct.quantity=quantity;     
-    //     console.log(addedProduct);
-
-    //     }
-    // },[products])
+ 
 
     useEffect(() => {
         const storedCart = getShoppingCart();
+        const saveCart = [];
         for (const id in storedCart) {
             const addedProduct = products.find(product => product.id === id);
             if (addedProduct) { // Check if addedProduct is defined
                 const quantity = storedCart[id];
                 addedProduct.quantity = quantity;
-                console.log(addedProduct);
+              
+                saveCart.push(addedProduct);
             } else {
                 console.log(`Product with id ${id} not found in the products array.`);
             }
+            console.log('addded cart',addedProduct);
         }
+        setCart(saveCart);
     }, [products]);
     
    const [cart,setCart] = useState([]);
