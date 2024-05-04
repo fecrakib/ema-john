@@ -1,7 +1,7 @@
 
 
 function Cart({cart}) {
-    console.log(cart)
+   
     let totalPrice = 0;
     let shipping=0;
     for (const product of cart) {
