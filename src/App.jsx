@@ -4,7 +4,7 @@ import Shop from './Component/Shop/Shop';
 
 const App = () => {
   return (
-    <div>
+    <div className='max-w-[1250px] mx-auto'>
      <Header></Header>
      <Shop></Shop>
     </div>
