@@ -1,8 +1,9 @@
 import React from 'react';
-
-const Product = ({product}) => {
+import { FaArchway } from "react-icons/fa";
+const Product = ({product,hadeladdToCart}) => {
     const {id,img,name,price,rating,seller} = product;
-    console.log(product)
+   
+
 
     return (
         <div className='m-4  relative rounded-md border-2 border-bg-slate-400'>
@@ -14,7 +15,7 @@ const Product = ({product}) => {
             <h3>Rating:{rating}</h3>
       
            </div>
-           <button className='bg-orange-600 hover:bg-orange-700 w-full absolute bottom-0'>Add to Cart </button>
+           <button onClick={()=>hadeladdToCart(product)} className='bg-orange-600 hover:bg-orange-700 w-full absolute bottom-0'> Add to Cart </button>
         </div>
     );
 };
